@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>COLLATE</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+		<link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+
+		<script>
+			var userAgent = navigator.userAgent + '';
+			if (userAgent.indexOf('iPhone') > -1) {
+				document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+				var mobile_system = 'iphone';
+			} else if (userAgent.indexOf('Android') > -1) {
+				document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+				var mobile_system = 'android';
+			} else {
+				var mobile_system = '';
+			}
+		</script>
+
+		<script src="js/lib/jquery.js"></script>
+		<!-- your scripts here -->
+		<script src="js/app/app.js"></script>
+		<script src="js/app/bootstrap.js"></script>
+		<script src="js/lib/jquery.mobile.js"></script>
+		<style>
+			.ui-selectmenu.ui-popup .ui-input-search {
+				margin-left: .5em;
+				margin-right: .5em;
+			}
+			.ui-selectmenu.ui-dialog .ui-content {
+				padding-top: 0;
+			}
+			.ui-selectmenu.ui-dialog .ui-selectmenu-list {
+				margin-top: 0;
+			}
+			.ui-selectmenu.ui-popup .ui-selectmenu-list li.ui-first-child .ui-btn {
+				border-top-width: 1px;
+				-webkit-border-radius: 0;
+				border-radius: 0;
+			}
+			.ui-selectmenu.ui-dialog .ui-header {
+				border-bottom-width: 1px;
+			}
+			a {
+				text-decoration: none;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div data-role="page" id="landingPage" style="background: white">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>Ashesi University College</h1>
+				<a href="index.html" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+				<center><img src ="image/mis.jpg"/></center>
+			<div data-role="content" style="text-shadow: none">
+				<a href="#declareRegion" data-transition="pop">
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					<h2>Management Information System</h2>
+					<p style="text-align: justify;">
+						In today’s rapidly changing business world, a company’s ability to compete depends on how quickly that enterprise can respond to change.
+						Central to this ability, is the successful use of information, and by extension, the appropriate deployment of information technology.
+
+						The Management Information Systems program at Ashesi University seeks to train system analysts and managers, who combine the knowledge 
+						of information technology with an understanding of business and organizational strategy. As such, this interdisciplinary program trains 
+						managers who are uniquely empowered to enhance the competitiveness of enterprises in the new knowledge economy.
+					</p>
+					
+					<h3 style="text-align: left;">Market Research</h3>
+					<p style="text-align: justify;">
+						
+							Timely and high quality information is crucial for the success of firms in today's highly competitive and evolving environment. Market research is an 
+							organized way of developing and providing information for managerial decision-making. This course takes the perspective of the manager who uses market 
+							research data. The course will introduce students to research methodology and implementation, as well as how to evaluate market research proposals and reports. 
+							The course is quantitative in its orientation and will provide an overview of how market research methods can be applied to solve problems in specific application 
+							areas such as estimating market potential, designing and positioning new products and services, pricing, and measuring customer satisfaction. The class consists of lectures, 
+							classroom discussions, and an applied team project. This course will give students a basic understanding of research methodology and implementation, and will enable students 
+							to effectively evaluate market research proposals, interpret, review, and criticize subsequent reports.
+					</p>
+				</div> </a>
+				<br />
+
+				<a href="http://www.ashesi.edu.gh/academics/business-administration/management-information-systems-courses.html" data-transition="pop">
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					Click here for more
+				</div> </a>
+				<br />
+
+			</div><!-- /content -->
+				<center><img src ="image/CS_Ashesi_2.jpg"/></center>
+		</div><!-- /page -->
+
+		<div data-role="page" id="declareRegions">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>EC</h1>
+				<a href="index.html" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none">
+				<!-- <div class="ui-field-contain"> -->
+				<select id="filter-menu" data-native-menu="false">
+					<option value ="SFO"> Greater Accra</option>
+					<option value ="LAX"> Central</option>
+					<option value ="YVR"> Ashanti</option>
+					<option value ="YYZ"> Eastern</option>
+					<option value ="YYZ"> Western </option>
+					<option value ="YYZ"> North</option>
+					<option value ="YYZ"> East</option>
+					<option value ="YYZ"> West</option>
+				</select>
+
+				<select id="filter-menu" data-native-menu="false">
+					<option value ="SFO"> Const A</option>
+					<option value ="LAX"> COnst B</option>
+					<option value ="YVR"> Const C</option>
+					<option value ="YYZ"> Const D</option>
+					<option value ="YYZ"> Const E</option>
+					<option value ="YYZ"> Const F</option>
+					<option value ="YYZ"> Const G</option>
+				</select>
+				<br />
+				<label>AFP</label>
+				<input type="Number" name="">
+				<br />
+				<label>GPG</label>
+				<input type="Number" name="">
+				<br />
+				<label>EOF</label>
+				<input type="Number" name="">
+				<br />
+
+<!-- 					<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+						<input type="radio" name="radio-choice-h-5" id="radio-choice-h-5a" value="on" checked="checked">
+						<label for="radio-choice-h-5a">One</label>
+						<input type="radio" name="radio-choice-h-5" id="radio-choice-h-5b" value="off">
+						<label for="radio-choice-h-5b">Two</label>
+						<input type="radio" name="radio-choice-h-5" id="radio-choice-h-5c" value="other">
+						<label for="radio-choice-h-5c">Three</label>
+					</fieldset> -->
+				<!-- </div> -->
+			</div><!-- /content -->
+		</div><!-- /page -->
+				<div data-role="page" id="declareResult">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>EC</h1>
+				<a href="index.html" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none">
+				<!-- <div class="ui-field-contain"> -->
+
+				<br />
+				<lh3>AFP:</h3>20
+				<br />
+				<lh3>AFP:</h3>10
+				<br />
+				<lh3>AFP:</h3>30
+				<br />
+
+<!-- 					<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+						<input type="radio" name="radio-choice-h-5" id="radio-choice-h-5a" value="on" checked="checked">
+						<label for="radio-choice-h-5a">One</label>
+						<input type="radio" name="radio-choice-h-5" id="radio-choice-h-5b" value="off">
+						<label for="radio-choice-h-5b">Two</label>
+						<input type="radio" name="radio-choice-h-5" id="radio-choice-h-5c" value="other">
+						<label for="radio-choice-h-5c">Three</label>
+					</fieldset> -->
+				<!-- </div> -->
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+	</body>
+	<script>
+		$.mobile.document
+		// "filter-menu-menu" is the ID generated for the listview when it is created
+		// by the custom selectmenu plugin. Upon creation of the listview widget we
+		// want to prepend an input field to the list to be used for a filter.
+		.on("listviewcreate", "#filter-menu-menu", function(e) {
+			var input,
+			    listbox = $("#filter-menu-listbox"),
+			    form = listbox.jqmData("filter-form"),
+			    listview = $(e.target);
+			// We store the generated form in a variable attached to the popup so we
+			// avoid creating a second form/input field when the listview is
+			// destroyed/rebuilt during a refresh.
+			if (!form) {
+				input = $("<input data-type='search'></input>");
+				form = $("<form></form>").append(input);
+				input.textinput();
+				$("#filter-menu-listbox").prepend(form).jqmData("filter-form", form);
+			}
+			// Instantiate a filterable widget on the newly created listview and
+			// indicate that the generated input is to be used for the filtering.
+			listview.filterable({
+				input : input
+			});
+		})
+		// The custom select list may show up as either a popup or a dialog,
+		// depending how much vertical room there is on the screen. If it shows up
+		// as a dialog, then the form containing the filter input field must be
+		// transferred to the dialog so that the user can continue to use it for
+		// filtering list items.
+		//
+		// After the dialog is closed, the form containing the filter input is
+		// transferred back into the popup.
+		.on("pagebeforeshow pagehide", "#filter-menu-dialog", function(e) {
+			var form = $("#filter-menu-listbox").jqmData("filter-form"),
+			    placeInDialog = (e.type === "pagebeforeshow" ),
+			    destination = placeInDialog ? $(e.target).find(".ui-content") : $("#filter-menu-listbox");
+			form.find("input")
+			// Turn off the "inset" option when the filter input is inside a dialog
+			// and turn it back on when it is placed back inside the popup, because
+			// it looks better that way.
+			.textinput("option", "inset", !placeInDialog).end().prependTo(destination);
+		});
+	</script>
+</html>
