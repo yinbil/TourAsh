@@ -95,9 +95,9 @@
 
 				<!-- Camera Here -->
 				<div><button id="capturePhoto" >CAMERA</button> </div>
-
+				<div><button id="btn">I am button</button></div>
 				<div><center><img class ="lazy" style="display: none; height: 100%; width: 100%;" id="smallImage" src=""></center></div>
-
+				
 				<div>
 					<button id="location">LOCATION</button>
 				</div>
@@ -479,13 +479,19 @@
 		</div><!-- /page -->
 		
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="script/platformOverrides.js"></script>
+		<script type="text/javascript" src="scripts/index.js"></script>
+		<script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+	    </script>
+	    <script type="text/javascript">
+	    	$("#btn").click(function(){
+	    		alert("you just clicked me");
+	    	});
+	    </script>
 	</body>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="script/platformOverrides.js"></script>
-	<script type="text/javascript" src="scripts/index.js"></script>
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+	
 </html>
