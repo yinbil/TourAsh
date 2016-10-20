@@ -1,4 +1,4 @@
-﻿  //Camera Here
+  //Camera Here
 (function() {
 
   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
@@ -16,13 +16,41 @@
         destinationType : destinationType.DATA_URL
       });
     }
-
-    //Geolocation Here
-    document.getElementById("location").addEventListener("click", function(){   
-      navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHigherAccuracy:true});
-    })
       
+  };  // End of onDeviceReady function
 
+
+  // Camera vital functions
+  function onPhotoDataSuccess(imageData) { //Begins here
+
+    var smallImage = document.getElementById('smallImage');
+
+    smallImage.style.display = 'block';
+
+    smallImage.src = "data:image/jpeg;base64," + imageData;
+
+  }
+
+  function onFail(message) {
+
+    alert('Failed because: ' + message);
+
+  }  // Ends here
+
+})();
+
+
+
+
+// Barcode Here
+
+(function() {
+
+  document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+  
+  // onDeviceReady function here
+  function onDeviceReady() {  // Beginning of onDeviceReady function
+    
     // Barcode Scanner Here
     document.getElementById("scancode").onclick = function() {
       cordova.plugins.barcodeScanner.scan(
@@ -46,66 +74,30 @@
 
     }
 
-
-    //  maps
-
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-        var infoWindow = new google.maps.InfoWindow({map: map});
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-      }
       
   };  // End of onDeviceReady function
 
-
-  // Camera vital functions
-  function onPhotoDataSuccess(imageData) { //Begins here
-
-    var smallImage = document.getElementById('smallImage');
-
-    smallImage.style.display = 'block';
-
-    smallImage.src = "data:image/jpeg;base64," + imageData;
-
-  }
-
-  function onFail(message) {
-
-    alert('Failed because: ' + message);
-
-  }  // Ends here
+})();
 
 
+// Geolocation here
 
-  // Geolocation vital function
+(function() {
+
+  document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+  
+  // onDeviceReady function here
+  function onDeviceReady() {  // Beginning of onDeviceReady function
+    
+  document.getElementById("locationdata").addEventListener("click", function(){   
+      navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHigherAccuracy:true});
+    });
+  
+
+      
+  };  // End of onDeviceReady function
+
+   // Geolocation vital function
   var onSuccess = function(position){ // begins here
     alert('Latitude' + position.coords.latitude + '\n'
       + 'Longitude' + position.coords.longitude + '\n'
@@ -118,18 +110,40 @@
   } // Ends here
 
 
+})();
 
-// Watch position functions here
-function onSuccess(position){ // begins here
-    var element = document.getElementById('geolocation');
-    element.innerHTML = 'Latitude:' + position.coords.latitude + '\n'
-      + 'Longitude' + position.coords.longitude + '\n'
-      + '<hr />' + element.innerHTML;
-      ;
+
+// watchPosition function here
+
+(function() {
+
+  document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+  
+  // onDeviceReady function here
+  function onDeviceReady() {  // Beginning of onDeviceReady function
+    
+    var watchId = navigator.geolocation.watchPosition(onWatchSuccess, onWatchError, {
+      timeout : 30000
+    });
+
+    document.getElementById("clearWatchbtn").addEventListener("click", function() {
+      navigator.geolocation.clearWatch(watchID);
+    });
+  
+
+      
+  };  // End of onDeviceReady function
+
+   // watchPosition vital functions
+  var onWatchSuccess = function(position) {
+    var element = document.getElementById('divWatchMeMove');
+    element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' + 'Longitude: ' + position.coords.longitude + '<br />' + '<hr />' + element.innerHTML;
   };
 
- var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {setTimeout: 3000});
-
+  function onWatchError(error) {
+    alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+  }
+  
 
 })();
 
