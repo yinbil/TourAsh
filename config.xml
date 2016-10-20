@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myappfe20d9" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US" android-versionCode="1">
-  <name>TourOne</name>
+  <name>TourOneTeam</name>
   <description>Help me in Ashesi Campus</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
   <content src="index.html" />
@@ -114,7 +114,7 @@
   <plugin name="cordova-plugin-geolocation"  />
   <plugin name="cordova-plugin-barcodescanner"  />
 
-  
+
   <preference name="android-minSdkVersion" value="1" />
   <preference name="android-maxSdkVersion" value="23" />
   <preference name="android-targetSdkVersion" value="21" />
